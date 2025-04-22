@@ -51,7 +51,7 @@ public class Game {
 	        }
 
 	        if (!snake.isInbounds()) {
-	            running = false;  // Set running to false if it is outside of bound
+	            running = false;  // Set running to false if it is outside of bound -- if the head of the snake hits edge, game will over
 	        }
 
 	        updateDrawing(); // redraw everything

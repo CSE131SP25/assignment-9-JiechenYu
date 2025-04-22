@@ -85,12 +85,12 @@ public class Snake {
 	    BodySegment head = segments.get(0);
 	    double dx = head.getX() - f.getX();
 	    double dy = head.getY() - f.getY();
-	    double distance = Math.sqrt(dx * dx + dy * dy);
+	    double distance = Math.sqrt(dx * dx + dy * dy); // Get the distance from the snake and the food
 
-	    if (distance < SEGMENT_SIZE + f.getSize()) {
-	        BodySegment tail = segments.getLast();
-	        segments.add(new BodySegment(tail.getX(), tail.getY(), SEGMENT_SIZE));
-	        return true;
+	    if (distance < SEGMENT_SIZE + f.getSize()) { // If the food and head of the snake overlap
+	        BodySegment tail = segments.getLast(); // get the tail of the snake
+	        segments.add(new BodySegment(tail.getX(), tail.getY(), SEGMENT_SIZE)); // add segment to the end of the tail| add segment to the end of the linked list
+	        return true; // return true indicates the snake has eaten the food
 	    }
 		return false;
 	}
